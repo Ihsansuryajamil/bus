@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Arafat Jaya - Tiket Online</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Mukta:wght@200;300;400;500;600;700;800&family=Abel:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header d-flex align-items-center position-relative">
+      <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+        <a href="index.html" class="logo d-flex align-items-center">
+          <h1 class="sitename">Arafat Jaya</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="tentang.html">Tentang Kami</a></li>
+            <li><a href="tiket.html" class="active">Pemesanan Tiket</a></li>
+            <li><a href=" berita.html">Berita</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+      </div>
+  </header>
+
+  <main class="main">
+
+    <section id="pengaduan-form" class="pengaduan-form section putih-background">
+        <div class="container section-title" data-aos="fade-up">
+            <span class="description-title">Pemesanan Tiket</span>
+            <h2>Pemesanan Tiket</h2>
+            <p>Kami menyediakan berbagai solusi transportasi darat untuk memenuhi segala kebutuhan perjalanan Anda.</p>
+        </div>
+        <div class="container" data-aos="fade-up">
+            
+            <div class="form-pengaduan-container">
+
+                <!-- @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif -->
+                
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <label for="kategori" class="form-label">Keberangkatan</label>
+                            <select class="form-select" id="kategori" name="kategori" required>
+                                <option selected disabled value="">Pilih Keberangkatan...</option>
+                                <option value="">Jakarta</option>
+                                <option value="">Bekasi</option>
+                                <option value="">Bogor</option>
+                                <option value="">Bandung</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="kategori" class="form-label">Tujuan</label>
+                            <select class="form-select" id="kategori" name="kategori" required>
+                                <option selected disabled value="">Pilih Tujuan...</option>
+                                <option value="">Jakarta</option>
+                                <option value="">Bekasi</option>
+                                <option value="">Bogor</option>
+                                <option value="">Bandung</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <label for="nama_pelapor" class="form-label">Tanggal</label>
+                            <input type="date" class="form-control" id="nama_pelapor" name="nama_pelapor" value="{{ old('nama_pelapor') }}" required>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="nama_pelapor" class="form-label">Jumlah Tiket</label>
+                            <input type="number" class="form-control" id="nama_pelapor" name="nama_pelapor" value="{{ old('nama_pelapor') }}" required>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                    </div>
+                    
+                    
+                    <button type="submit" class="btn btn-submit-pengaduan text-white" style="background-color: #438afd;">Cari Bus</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="container mt-4" data-aos="fade-up">
+            
+            <div class="form-pengaduan-container">
+
+                <!-- @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif -->
+                
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                    <tr>
+                                    <th class="text-center">No</th>
+                                    <th class="">Nama Bus</th>
+                                    <th  >Rute</th>
+                                    <th  >Jam Keberangkatan</th>
+                                    <th  >Fasilitas</th>
+                                    <th  >Harga</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                        <p class="text-xs text-secondary mb-0 text-center">1</p>
+                                        </td>
+                                        <td>
+                                        <p class="text-xs text-secondary mb-0">nama bus</p>
+                                        </td>
+                                        <td>
+                                        <p class="text-xs text-secondary mb-0"></p>
+                                        </td>
+                                        
+                                        <td>
+                                        <p class="text-xs text-secondary mb-0">
+                                            {{ $data->created_at->format('d M Y') }}
+                                        </p>
+                                        </td>
+                                        <td>
+                                        <a href="" class="btn bg-warning text-white">
+                                            <i class="fas fa-edit text-white"></i>
+                                        </a>
+                                        <span class="badge bg-success">Beli Sekarang</span>
+                                        
+                                        </td>
+                                        <td>
+                                            <p class="text-xs text-secondary mb-0">Rp.</p><br>
+                                            <span class="badge bg-success">Beli Sekarang</span>
+                                        </td>
+                                    </tr>
+                                        <tr>
+                                            <td colspan="6" class="text-center text-secondary">tidak Tersedia</td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+    <section id="features-alt" class="features-alt section putih-background">
+      <div class="container section-title" data-aos="fade-up">
+        <span class="description-title">Langkah Pemesanan</span>
+        <h2>Langkah-Langkah Pemesanan Tiket</h2>
+        <p>Ikuti langkah-langkah mudah berikut untuk memesan tiket bus Anda secara online.</p>
+      </div><div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <ul class="nav nav-tabs flex-column" role="tablist" data-aos="fade-right" data-aos-delay="200">
+              <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#features-alt-tab-1" role="tab">
+                  <div class="d-flex align-items-center">
+                    <div class="icon-box">
+                      <i class="bi bi-search"></i>
+                    </div>
+                    <div class="ms-3">
+                      <h4>1. Pilih Rute & Jadwal</h4>
+                      <p>Cari dan pilih rute tujuan serta jadwal keberangkatan yang Anda inginkan.</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-alt-tab-2" role="tab">
+                  <div class="d-flex align-items-center">
+                    <div class="icon-box">
+                      <i class="bi bi-person-check"></i>
+                    </div>
+                    <div class="ms-3">
+                      <h4>2. Pilih Kursi & Isi Data</h4>
+                      <p>Pilih kursi yang tersedia dan isi data diri Anda dengan lengkap.</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-alt-tab-3" role="tab">
+                  <div class="d-flex align-items-center">
+                    <div class="icon-box">
+                      <i class="bi bi-whatsapp"></i>
+                    </div>
+                    <div class="ms-3">
+                      <h4>3. Lakukan Pembayaran</h4>
+                      <p>Anda akan diarahkan ke WhatsApp untuk proses pembayaran.</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-alt-tab-4" role="tab">
+                  <div class="d-flex align-items-center">
+                    <div class="icon-box">
+                      <i class="bi bi-receipt"></i>
+                    </div>
+                    <div class="ms-3">
+                      <h4>4. Kirim Bukti Transfer</h4>
+                      <p>Kirimkan bukti transfer pembayaran Anda melalui WhatsApp.</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-alt-tab-5" role="tab">
+                  <div class="d-flex align-items-center">
+                    <div class="icon-box">
+                      <i class="bi bi-ticket-perforated"></i>
+                    </div>
+                    <div class="ms-3">
+                      <h4>5. Tiket Dikonfirmasi</h4>
+                      <p>Admin akan memverifikasi dan tiket Anda berhasil di-booking.</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
+              <div class="tab-pane fade active show" id="features-alt-tab-1" role="tabpanel">
+                <div class="content-box">
+                  <div class="row g-4">
+                    <div class="col-lg-6">
+                      <h3>Pilih Rute dan Jadwal Keberangkatan</h3>
+                      <p>Mulailah perjalanan Anda dengan mudah. Buka website kami dan langsung menuju halaman pemesanan tiket.</p>
+                      <p class="highlight">Pilih kota asal, kota tujuan, dan tanggal keberangkatan untuk melihat semua jadwal yang tersedia.</p>
+                      <ul class="features-list">
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Buka website pemesanan.</span>
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Pilih menu "Pesan Tiket".</span>
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Tentukan rute perjalanan Anda.</span>
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Lihat daftar keberangkatan bus yang tersedia.</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="image-box">
+                        <img src="assets/img/about/about-8.webp" alt="Pilih Rute Bus" class="img-fluid" loading="lazy">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="features-alt-tab-2" role="tabpanel">
+                <div class="content-box">
+                  <div class="row g-4">
+                    <div class="col-lg-6">
+                      <h3>Amankan Kursi Favorit Anda</h3>
+                      <p>Setelah menemukan jadwal yang pas, pilih bus dan kursi yang paling nyaman menurut Anda. Pastikan semua data terisi dengan benar.</p>
+                      <p class="highlight">Data yang Anda masukkan akan langsung tersimpan di sistem kami untuk mempercepat proses selanjutnya.</p>
+                      <ul class="features-list">
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Pilih bus dari daftar yang muncul.</span>
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Lihat denah kursi dan pilih kursi yang masih kosong.</span>
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Isi data diri seperti Nama, No. HP, dan lainnya.</span>
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Klik "Lanjut" untuk menyimpan data pemesanan.</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="image-box">
+                        <img src="assets/img/about/about-8.webp" alt="Pilih Kursi dan Isi Data" class="img-fluid" loading="lazy">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="features-alt-tab-3" role="tabpanel">
+                <div class="content-box">
+                  <div class="row g-4">
+                    <div class="col-lg-6">
+                      <h3>Selesaikan Pembayaran via WhatsApp</h3>
+                      <p>Untuk kemudahan dan keamanan, proses pembayaran dilakukan melalui WhatsApp. Anda akan otomatis diarahkan ke chat admin kami.</p>
+                      <p class="highlight">Admin kami akan memberikan informasi nomor rekening dan total yang harus dibayarkan.</p>
+                      <ul class="features-list">
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Setelah mengisi data, Anda akan diarahkan ke WhatsApp.</span>
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Sapa admin untuk memulai proses pembayaran.</span>
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Terima detail pembayaran dari admin.</span>
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Lakukan transfer sesuai nominal yang tertera.</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="image-box">
+                        <img src="assets/img/about/about-8.webp" alt="Pembayaran via WhatsApp" class="img-fluid" loading="lazy">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="features-alt-tab-4" role="tabpanel">
+                <div class="content-box">
+                  <div class="row g-4">
+                    <div class="col-lg-6">
+                      <h3>Konfirmasi Pembayaran Anda</h3>
+                      <p>Langkah terakhir dari sisi Anda adalah mengirimkan bukti pembayaran. Ini penting agar admin bisa segera memproses pesanan Anda.</p>
+                      <p class="highlight">Pastikan bukti transfer yang Anda kirim jelas dan dapat dibaca untuk verifikasi yang lebih cepat.</p>
+                      <ul class="features-list">
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Screenshot atau foto bukti transfer Anda.</span>
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Kirimkan gambar tersebut ke admin melalui chat WhatsApp yang sama.</span>
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Tunggu admin mengecek dan memverifikasi pembayaran Anda.</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="image-box">
+                        <img src="assets/img/about/about-8.webp" alt="Kirim Bukti Transfer" class="img-fluid" loading="lazy">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="features-alt-tab-5" role="tabpanel">
+                <div class="content-box">
+                  <div class="row g-4">
+                    <div class="col-lg-6">
+                      <h3>Tiket Berhasil Dipesan!</h3>
+                      <p>Setelah pembayaran diverifikasi, admin akan langsung menyetujui (approve) pesanan Anda di sistem.</p>
+                      <p class="highlight">Kursi yang Anda pilih sudah aman dan ter-booking atas nama Anda. Selamat menikmati perjalanan!</p>
+                      <ul class="features-list">
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Admin menerima bukti transfer dan melakukan verifikasi.</span>
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Admin login ke sistem dan menyetujui pesanan Anda.</span>
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Status kursi Anda berubah menjadi "Ter-booking".</span>
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle"></i>
+                          <span>Anda akan menerima konfirmasi akhir dari admin.</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="image-box">
+                        <img src="assets/img/about/about-8.webp" alt="Tiket Dikonfirmasi" class="img-fluid" loading="lazy">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Arafat Jaya</span>
+          </a>
+          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-6 footer-links">
+          <h4>Contact Us</h4>
+          <p>A108 Adam Street</p>
+          <p>New York, NY 535022</p>
+          <p>United States</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+          <p><strong>Email:</strong> <span>info@example.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <nav class="mobile-bottom-nav">
+    <ul>
+      <li>
+        <a href="index.html">
+          <i class="bi bi-house-door-fill"></i>
+          <span>Beranda</span>
+        </a>
+      </li>
+      <li>
+        <a href="tentang.html">
+          <i class="bi bi-info-circle-fill"></i>
+          <span>Tentang</span>
+        </a>
+      </li>
+      <li>
+        <a href="tiket.html" class="active">
+          <i class="bi bi-ticket-perforated-fill"></i>
+          <span>Pesan Tiket</span>
+        </a>
+      </li>
+      <li>
+        <a href=" berita.html">
+          <i class="bi bi-newspaper"></i>
+          <span>Berita</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <i class="bi bi-headset"></i>
+          <span>Kontak</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

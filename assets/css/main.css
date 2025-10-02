@@ -4530,3 +4530,36 @@ section,
     bottom: 100px; /* Menaikkan posisi dari bawah agar di atas navigasi */
   }
 }
+/*--------------------------------------------------------------
+# Pagination Styling
+--------------------------------------------------------------*/
+.pagination-container {
+  margin-top: 40px;
+}
+
+.pagination .page-item .page-link {
+  color: var(--default-color);
+  background-color: var(--surface-color);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+  border-radius: 8px;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 80%);
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.pagination .page-item.disabled .page-link {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+  background-color: transparent;
+  border-color: color-mix(in srgb, var(--default-color), transparent 90%);
+}
