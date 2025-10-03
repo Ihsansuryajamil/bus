@@ -4563,3 +4563,27 @@ section,
   background-color: transparent;
   border-color: color-mix(in srgb, var(--default-color), transparent 90%);
 }
+/*--------------------------------------------------------------
+# Perbaikan Sticky Header
+--------------------------------------------------------------*/
+
+/* 1. Membuat Header Selalu Menempel di Atas dengan Background Solid */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Memastikan header selalu di lapisan paling atas */
+  background-color: #070d1a; /* Ganti dengan warna header yang Anda inginkan, contoh: #070d1a (hitam) */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 2. Memberi Jarak Seukuran Header pada Konten Utama */
+body {
+  padding-top: 60px; /* Ganti angka ini jika tinggi header Anda berbeda */
+}
+
+/* 3. Menyesuaikan Posisi Scroll untuk Link Navigasi */
+section, .section {
+  scroll-margin-top: 60px; /* Samakan dengan padding-top body */
+}
